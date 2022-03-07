@@ -2,6 +2,9 @@ plugins {
     id("groovy") 
     id("com.github.johnrengelman.shadow") version "7.1.1"
     id("io.micronaut.application") version "3.2.2"
+    id "com.github.otkmnb2783.dotenv" version "0.2.0"
+    id "com.github.erdi.webdriver-binaries" version "2.7"
+    id "com.github.erdi.extended-idea" version "2.2"
 }
 
 version = "0.1"
@@ -13,25 +16,32 @@ repositories {
 
 dependencies {
     implementation("info.picocli:picocli")
-    implementation("io.micronaut:micronaut-jackson-databind")
     implementation("io.micronaut.groovy:micronaut-runtime-groovy")
+    implementation("io.micronaut:micronaut-jackson-databind")
+    implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut.picocli:micronaut-picocli")
     implementation("jakarta.annotation:jakarta.annotation-api")
+    implementation("org.gebish:geb-spock:5.1")
+    implementation("org.gebish:geb-core:5.1")
+    implementation("org.seleniumhq.selenium:selenium-chrome-driver:4.1.2")
+    implementation("org.seleniumhq.selenium:selenium-firefox-driver:4.1.2")
+    implementation("org.seleniumhq.selenium:selenium-support:4.1.2")
     compileOnly("info.picocli:picocli-codegen")
     runtimeOnly("ch.qos.logback:logback-classic")
-    implementation("io.micronaut:micronaut-validation")
-
     testImplementation("io.micronaut:micronaut-http-client")
-
 }
 
 
 application {
-    mainClass.set("com.ham.kompromat.KompromatCommand")
+    mainClass.set("com.kompromat.KompromatCommand")
+    executableDir = ''
 }
+
+// We're stuck on Java 11 until https://github.com/erdi/webdriver-binaries-gradle-plugin/issues/30 is fixed
 java {
-    sourceCompatibility = JavaVersion.toVersion("11")
-    targetCompatibility = JavaVersion.toVersion("11")
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
 }
 
 micronaut {
@@ -42,4 +52,15 @@ micronaut {
     }
 }
 
+ext {
+    drivers = ["gecko"]
+}
 
+webdriverBinaries {
+    driverUrlsConfiguration = resources.text.fromFile('drivers.json')
+    geckodriver {
+        version = "0.30.0"
+        downloadRoot = java.nio.file.Path.of('./build').toFile()
+    }
+    configureTasks(project.tasks.withType(JavaExec))
+}

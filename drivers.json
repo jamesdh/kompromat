@@ -1,0 +1,74 @@
+{
+  "drivers": [
+    {
+      "name": "chromedriver",
+      "platform": "windows",
+      "bit": "32",
+      "version": "99.0.4844.35",
+      "url": "https://chromedriver.storage.googleapis.com/99.0.4844.35/chromedriver_win32.zip"
+    },
+    {
+      "name": "chromedriver",
+      "platform": "mac",
+      "bit": "64",
+      "version": "99.0.4844.35",
+      "url": "https://chromedriver.storage.googleapis.com/99.0.4844.35/chromedriver_mac64.zip"
+    },
+    {
+      "name": "chromedriver",
+      "platform": "mac",
+      "bit": "arm64",
+      "version": "99.0.4844.35",
+      "url": "https://chromedriver.storage.googleapis.com/99.0.4844.35/chromedriver_mac64_m1.zip"
+    },
+    {
+      "name": "chromedriver",
+      "platform": "linux",
+      "bit": "64",
+      "version": "99.0.4844.35",
+      "url": "https://chromedriver.storage.googleapis.com/99.0.4844.35/chromedriver_linux64.zip"
+    },
+    {
+      "name": "geckodriver",
+      "platform": "windows",
+      "bit": "64",
+      "version": "0.30.0",
+      "url": "https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-win64.zip"
+    },
+    {
+      "name": "geckodriver",
+      "platform": "windows",
+      "bit": "32",
+      "version": "0.30.0",
+      "url": "https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-win32.zip"
+    },
+    {
+      "name": "geckodriver",
+      "platform": "linux",
+      "bit": "64",
+      "version": "0.30.0",
+      "url": "https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz"
+    },
+    {
+      "name": "geckodriver",
+      "platform": "linux",
+      "bit": "32",
+      "version": "0.30.0",
+      "url": "https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux32.tar.gz"
+    },
+    {
+      "name": "geckodriver",
+      "platform": "mac",
+      "bit": "64",
+      "version": "0.30.0",
+      "url": "https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-macos.tar.gz"
+    },
+    {
+      "name": "geckodriver",
+      "platform": "mac",
+      "bit": "arm64",
+      "version": "0.30.0",
+      "url": "https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-macos-aarch64.tar.gz"
+    }
+  ]
+}
