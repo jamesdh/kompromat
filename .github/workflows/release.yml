@@ -1,0 +1,32 @@
+name: Kompromat CI
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  kompromat-release:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Installs Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: 11
+          cache: 'gradle'
+
+      - name: Build with Gradle
+        run: ./gradlew distZip
+      
+      - name: Auto-release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            build/distributions/kompromat*.zip

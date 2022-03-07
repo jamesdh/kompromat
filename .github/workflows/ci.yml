@@ -1,0 +1,24 @@
+name: Kompromat CI
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  kompromat-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Installs Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: 11
+          cache: 'gradle'
+
+      - name: Build with Gradle
+        run: ./gradlew distZip
