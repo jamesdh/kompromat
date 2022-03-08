@@ -7,8 +7,9 @@
 
 Kompromat is an automated WebDriver-based tool used for driving a sandboxed instance of FireFox against Yandex Maps. It
 takes a message and photo, locates random restaurants in and around the intended Russian/Belarusian city, and leaves a
-review for each. In this way it **may** be possible to let the people within Russia see what is happening just across
-their border.
+review for each. This should make it possible to leave hundreds if not thousands of reviews per day for a single running
+instance. In this way it **may** be possible to get information to the Russian people about what is happening just
+across their border.
 
 At the moment it is only tested on MacOS. It *should* work on Windows, but you will at the very least need to manually
 install geckodriver for it to work. A script is provided for MacOS which will do this for you.
@@ -142,7 +143,7 @@ The following is a list of things that may help make this tool easier to use by 
 2. Machine learning to automatically decipher the captcha text, thus not requiring users to try and type out cyrillic
    which many people will struggle with
 3. Automate the Yandex account creation process.
-4. Improvements to help avoid bot detection (and thus the captcha requests)
+4. Selenium/Webdriver tricks to help avoid bot detection (and thus the captcha requests)
 
 ---
 
