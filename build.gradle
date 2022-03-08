@@ -40,7 +40,7 @@ application {
 // We're stuck on Java 11 until https://github.com/erdi/webdriver-binaries-gradle-plugin/issues/30 is fixed
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(8)
+        languageVersion = JavaLanguageVersion.of(11)
     }
 }
 
@@ -53,11 +53,15 @@ micronaut {
 }
 
 ext {
-    drivers = ["gecko"]
+    drivers = ["gecko", "chrome"]
 }
 
 webdriverBinaries {
     driverUrlsConfiguration = resources.text.fromFile('drivers.json')
+    chromedriver {
+        version = "99.0.4844.35"
+        downloadRoot = java.nio.file.Path.of('./build').toFile()
+    }
     geckodriver {
         version = "0.30.0"
         downloadRoot = java.nio.file.Path.of('./build').toFile()
