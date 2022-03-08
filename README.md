@@ -14,6 +14,7 @@ At the moment it is only tested on MacOS. It *should* work on Windows, but you w
 install geckodriver for it to work. A script is provided for MacOS which will do this for you.
 
 ## Table of Contents:
+
 ___
 
 1. [Installing](#installing)
@@ -35,11 +36,14 @@ ___
 2. Download the compressed zip of the latest release from [here](https://github.com/jamesdh/kompromat/releases/latest).
 3. Extract the zip to any directory.
 4. Open a terminal and go to the extracted directory.
-5. Run the [geckodriver.sh](https://github.com/jamesdh/kompromat/blob/master/src/main/dist/geckodriver.sh) script, e.g.
-   `$ ./geckodriver.sh`. This installs the correct version
-   of [WebDriver](https://www.selenium.dev/documentation/webdriver/)
-   for your operating system and only needs to be run the first time.
+5. Run [geckodriver-install](https://github.com/jamesdh/kompromat/blob/master/src/main/dist/geckodriver-install)
+   script within this directory, e.g.
+   `$ ./geckodriver-install`.
+    1. This installs the correct version of [WebDriver](https://www.selenium.dev/documentation/webdriver/) for your
+       operating system and only needs to be run the first time.
+
 ---
+
 ## Running
 
 First you will have to create a Yandex account. This is actually fairly easy to do with a few simple tricks.
