@@ -11,7 +11,7 @@ class LandingPage extends Page {
     static url = "https://yandex.ru"
 
     static at = {
-        waitFor(20) {
+        waitFor(300) {
             $('div.home-logo__default')
         }
     }
