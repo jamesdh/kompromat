@@ -36,7 +36,7 @@ class PlacePage extends Page {
         }
         comment.text = message
         filesInput.file = photo.toFile()
-        cancel.click()
+        send.click()
         return this
     }
 
