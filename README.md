@@ -27,6 +27,7 @@ ___
     2. [Yandex wants a phone number](#yandex-is-asking-for-a-phone-number)
     3. [Yandex thinks I'm a robot](#yandex-is-asking-if-i-am-a-robot)
 4. [How to contribute](#how-to-contribute)
+5. [Built With](#built-with)
 
 ---
 
@@ -138,7 +139,15 @@ the next time you run the script it should not prompt you with the captcha.
 The following is a list of things that may help make this tool easier to use by more people:
 
 1. A Windows equivalent of the geckodriver script to automate the installation of WebDriver on Windows
-2. Machine learning to automatically decipher the captcha text, thus not requiring users to try and type out 
-   cyrillic which many people will struggle with
-3. Automate the Yandex account creation process. 
+2. Machine learning to automatically decipher the captcha text, thus not requiring users to try and type out cyrillic
+   which many people will struggle with
+3. Automate the Yandex account creation process.
 4. Improvements to help avoid bot detection (and thus the captcha requests)
+
+---
+
+## Built With
+
+- [Micronaut](https://micronaut.io)
+- [Groovy](https://groovy.apache.org)
+- [Geb](#https://gebish.org)
