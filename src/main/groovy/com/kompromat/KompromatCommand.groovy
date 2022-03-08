@@ -16,10 +16,10 @@ class KompromatCommand implements Runnable {
 
     @Inject YandexService yandexService
 
-    @CommandLine.Parameters
+    @CommandLine.Parameters(description = "A Yandex username")
     String username
 
-    @CommandLine.Parameters
+    @CommandLine.Parameters(description = "A password for the given username")
     String password
 
     @CommandLine.Option(
