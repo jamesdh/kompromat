@@ -26,6 +26,7 @@ dependencies {
     implementation("org.seleniumhq.selenium:selenium-chrome-driver:4.1.2")
     implementation("org.seleniumhq.selenium:selenium-firefox-driver:4.1.2")
     implementation("org.seleniumhq.selenium:selenium-support:4.1.2")
+    implementation("io.github.bonigarcia:webdrivermanager:5.1.0")
     compileOnly("info.picocli:picocli-codegen")
     runtimeOnly("ch.qos.logback:logback-classic")
     testImplementation("io.micronaut:micronaut-http-client")

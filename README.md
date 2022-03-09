@@ -38,13 +38,9 @@ ___
    1. From a command line, type `java --version` and hit enter to see the version
 2. Verify you have a recent version of [Chrome](https://www.google.com/chrome/index.html) installed.
 3. Download the compressed zip of the latest release from [here](https://github.com/jamesdh/kompromat/releases/latest).
-4. Extract the zip to any directory.
-5. Open a terminal and go to the extracted directory.
-6. Run [chromedriver-install](https://github.com/jamesdh/kompromat/blob/master/src/main/dist/chromedriver-install)
-   script within this directory, e.g.
-   `$ ./chromedriver-install`.
-    1. This installs the correct version of [WebDriver](https://www.selenium.dev/documentation/webdriver/) for your
-       operating system and browser version and only needs to be run the first time or whenever Chrome is updated.
+4. Extract the zip.
+5. Open a terminal and go to the extracted directory, e.g. : <br>
+   `cd Downloads/kompromat-1.1.0`
 
 ---
 
@@ -89,7 +85,7 @@ will be left in each review. This photo can also be changed so long as it remain
 
 #### Running the script
 
-Once you have your Yandex account credentials, you can run the program as so:
+Once you have your Yandex account credentials, you can run the program via your opened terminal:
 
 ```
 Usage: kompromat [--city=<city>] <username> <password>
