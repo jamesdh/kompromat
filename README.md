@@ -20,8 +20,6 @@ The following is a screen capture of the tool at work: <br>
 
 ## Table of Contents:
 
-___
-
 1. [Installing](#installing)
 2. [Running](#running)
     1. [Creating a Yandex account](#creating-a-yandex-account)
@@ -34,8 +32,6 @@ ___
 4. [How to contribute](#how-to-contribute)
 5. [Built With](#built-with)
 
----
-
 ## Installing
 
 1. Verify you have a Java 11 or greater runtime installed.
@@ -45,8 +41,6 @@ ___
 4. Extract the zip.
 5. Open a terminal and go to the extracted directory, e.g. : <br>
    `cd Downloads/kompromat-1.1.0`
-
----
 
 ## Running
 
@@ -111,8 +105,6 @@ Specify what city to focus on:
 $ ./kompromat --city=MINSK 'myusername' 'mypassword'
 ```
 
----
-
 ## Suggestions and Caveats
 
 #### Use a burner email
@@ -134,8 +126,6 @@ At times Yandex will detect your actions as a bot and prompt you with a small bo
 human, and may also ask you to fill out a captcha. In the event this captcha is required, Kompromat should pause for 
 up to 5 minutes to allow you to enter the necessary text. 
 
----
-
 ## How to contribute
 
 The following is a list of things that may help make this tool easier to use by more people:
@@ -148,10 +138,8 @@ The following is a list of things that may help make this tool easier to use by 
    1. The switch to Google Chrome and taking advantage of webdriver features that were not possible in Firefox 
       should have resolved this about as good as can be hoped for. 
 
----
-
 ## Built With
 
 - [Micronaut](https://micronaut.io)
 - [Groovy](https://groovy.apache.org)
-- [Geb](#https://gebish.org)
+- [Geb](https://gebish.org)
