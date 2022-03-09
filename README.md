@@ -5,14 +5,14 @@
 1. compromising information that is used to discredit a person or group
 2. a tool for informing the Russian people of the atrocities being committed by their government
 
-Kompromat is an automated WebDriver-based tool used for driving a sandboxed instance of FireFox against Yandex Maps. It
+Kompromat is an automated WebDriver-based tool used for driving an instance of Google Chrome against Yandex Maps. It
 takes a message and photo, locates random restaurants in and around the intended Russian/Belarusian city, and leaves a
 review for each. This should make it possible to leave hundreds if not thousands of reviews per day for a single running
 instance. In this way it **may** be possible to get information to the Russian people about what is happening just
 across their border.
 
-At the moment it is only tested on MacOS. It *should* work on Windows, but you will at the very least need to manually
-install geckodriver for it to work. A script is provided for MacOS which will do this for you.
+At the moment it is only tested on MacOS. It *should* work on Windows with Windows Subsystem for Linux (WSL) but 
+this has not been tested. 
 
 ## Table of Contents:
 
@@ -34,15 +34,17 @@ ___
 
 ## Installing
 
-1. Make sure you have the latest version of [FireFox](https://www.mozilla.org/en-US/firefox/download/thanks/) installed.
-2. Download the compressed zip of the latest release from [here](https://github.com/jamesdh/kompromat/releases/latest).
-3. Extract the zip to any directory.
-4. Open a terminal and go to the extracted directory.
-5. Run [geckodriver-install](https://github.com/jamesdh/kompromat/blob/master/src/main/dist/geckodriver-install)
+1. Verify you have a Java 11 or greater runtime installed.
+   1. From a command line, type `java --version` and hit enter to see the version
+2. Verify you have a recent version of [Chrome](https://www.google.com/chrome/index.html) installed.
+3. Download the compressed zip of the latest release from [here](https://github.com/jamesdh/kompromat/releases/latest).
+4. Extract the zip to any directory.
+5. Open a terminal and go to the extracted directory.
+6. Run [chromedriver-install](https://github.com/jamesdh/kompromat/blob/master/src/main/dist/chromedriver-install)
    script within this directory, e.g.
-   `$ ./geckodriver-install`.
+   `$ ./chromedriver-install`.
     1. This installs the correct version of [WebDriver](https://www.selenium.dev/documentation/webdriver/) for your
-       operating system and only needs to be run the first time.
+       operating system and browser version and only needs to be run the first time or whenever Chrome is updated.
 
 ---
 
@@ -52,7 +54,7 @@ First you will have to create a Yandex account. This is actually fairly easy to 
 
 #### Creating a Yandex account
 
-1. Using a recent version of Google Chrome, go to https://yandex.ru
+1. Using Google Chrome, go to https://yandex.ru
 2. On the right side of the address bar you should see a small translation icon. Click it and select "English". The page
    should largely be visible in English now.
 3. Click "Log in" in the upper right corner.
@@ -129,9 +131,8 @@ associated with you in any way, and it should not cost anything during the free 
 #### Yandex is asking if I am a robot
 
 At times Yandex will detect your actions as a bot and prompt you with a small box to click verifying that you are a
-human. This can be difficult to catch while the script is running. The browser may time out and exit before you've done
-so. The easy way to get around this is to manually log into Yandex (not using the script) and to do the captcha. Then
-the next time you run the script it should not prompt you with the captcha.
+human, and may also ask you to fill out a captcha. In the event this captcha is required, Kompromat should pause for 
+up to 5 minutes to allow you to enter the necessary text. 
 
 ---
 
@@ -139,11 +140,13 @@ the next time you run the script it should not prompt you with the captcha.
 
 The following is a list of things that may help make this tool easier to use by more people:
 
-1. A Windows equivalent of the geckodriver script to automate the installation of WebDriver on Windows
+1. Test and/or provide any fixes for Windows machines
 2. Machine learning to automatically decipher the captcha text, thus not requiring users to try and type out cyrillic
    which many people will struggle with
-3. Automate the Yandex account creation process.
-4. Selenium/Webdriver tricks to help avoid bot detection (and thus the captcha requests)
+3. Automate the Yandex account creation process. Dependent on #2 above. 
+4. ~~Selenium/Webdriver tricks to help avoid bot detection (and thus the captcha requests)~~ 
+   1. The switch to Google Chrome and taking advantage of webdriver features that were not possible in Firefox 
+      should have resolved this about as good as can be hoped for. 
 
 ---
 
