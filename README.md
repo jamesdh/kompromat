@@ -14,6 +14,10 @@ across their border.
 At the moment it is only tested on MacOS. It *should* work on Windows with Windows Subsystem for Linux (WSL) but 
 this has not been tested. 
 
+The following is a screen capture of the tool at work: <br>
+
+[![Kompromat at work](kompromat.gif)](https://www.youtube.com/watch?v=jm4DOPDnHoQ)
+
 ## Table of Contents:
 
 ___
