@@ -17,7 +17,7 @@ class PlacePage extends Page {
     }
 
     static content = {
-        reviews {$('span.business-header-rating-view__text', dynamic: true)}
+        reviews {$('span.business-header-rating-view__text._clickable', dynamic: true)}
         star5 {$('div.business-rating-edit-view > div:nth-child(5)')}
         comment(required: false) {$('span.business-review-form-comment-view__textarea > span > textarea', dynamic: true).module(Textarea)}
         filesInput(required: false) {$('div.business-review-form > div.add-photos-view > div > input[type=file]', dynamic: true).module(FileInput)}
