@@ -37,7 +37,7 @@ class KompromatCommand implements Runnable {
         Path message = Path.of('message.txt')
         Path photo = Path.of('photo.jpg')
         log.info("Starting reviews within {} area", city.name())
-        log.info("Using the following text from file {}: {}", message.toAbsolutePath(), message.toFile().text)
+        log.info("Using text from file {}: \r\n{}", message.toAbsolutePath(), message.toFile().text)
         log.info("Using photo from file {}", photo.toAbsolutePath())
         yandexService.go(username, password, message.toFile().text, photo, city)
     }
