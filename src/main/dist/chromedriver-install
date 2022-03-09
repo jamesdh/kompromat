@@ -1,0 +1,22 @@
+#!/bin/bash
+# download and install latest geckodriver for linux or mac.
+# required for selenium to drive a firefox browser.
+
+json=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest)
+if [[ $(uname) == "Darwin" ]]; then
+  version=$(/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --version | sed 's/Google\ Chrome//' | xargs)
+  if [[ $(uname -m) == "x86_64" ]]; then
+    url="https://chromedriver.storage.googleapis.com/${version}/chromedriver_mac64.zip"
+  elif [[ $(uname -m) == "arm64" ]]; then
+    url="https://chromedriver.storage.googleapis.com/${version}/chromedriver_mac64_m1.zip"
+  fi
+elif [[ $(uname) == "Linux" ]]; then
+    version=$(google-chrome --version | | sed 's/Google\ Chrome//' | xargs)
+    url="https://chromedriver.storage.googleapis.com/${version}/chromedriver_linux64.zip"
+else
+    echo "can't determine OS"
+    exit 1
+fi
+curl -o chromedriver.zip -s -L "$url"
+unzip chromedriver.zip
+chmod +x chromedriver
