@@ -26,12 +26,11 @@ class PlacePage extends Page {
     }
 
     PlacePage doRating(String message, Path photo) {
-        waitFor(5000) {
+        waitFor(2500) {
             star5
         }
         star5.click()
-        sleep(2000)
-        waitFor(5000) {
+        waitFor(2500) {
             comment
         }
         comment.text = message
