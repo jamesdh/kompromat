@@ -38,7 +38,7 @@ The following is a screen capture of the tool at work: <br>
    1. From a command line, type `java --version` and hit enter to see the version
    2. If you don't, download it from their [website](https://www.oracle.com/java/technologies/downloads/).
 2. Verify you have a recent version of [Chrome](https://www.google.com/chrome/index.html) installed.
-3. Download the compressed zip of the latest release from [here](https://github.com/jamesdh/kompromat/releases/latest).
+3. Download the compressed zip (not the source code) of the latest release from [here](https://github.com/jamesdh/kompromat/releases/latest).
 4. Extract the zip.
 5. Open a terminal and go to the extracted directory, e.g. : <br>
    `cd Downloads/kompromat-1.1.0`
