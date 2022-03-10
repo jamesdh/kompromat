@@ -36,6 +36,7 @@ The following is a screen capture of the tool at work: <br>
 
 1. Verify you have a Java 11 or greater runtime installed.
    1. From a command line, type `java --version` and hit enter to see the version
+   2. If you don't, download it from their [website](https://www.oracle.com/java/technologies/downloads/).
 2. Verify you have a recent version of [Chrome](https://www.google.com/chrome/index.html) installed.
 3. Download the compressed zip of the latest release from [here](https://github.com/jamesdh/kompromat/releases/latest).
 4. Extract the zip.
@@ -49,8 +50,7 @@ First you will have to create a Yandex account. This is actually fairly easy to 
 #### Creating a Yandex account
 
 1. Using Google Chrome, go to https://yandex.ru
-2. On the right side of the address bar you should see a small translation icon. Click it and select "English". The page
-   should largely be visible in English now.
+2. On the right side of the browser address bar (in Google Chrome) you should see a small translate icon labelled "Translate this page". Click it and select "English". The page should largely be visible in English now.
 3. Click "Log in" in the upper right corner.
 4. Click "Create ID".
 5. Add the necessary information to create an account. **NOTE**: You do not need to add a phone number when initially
@@ -69,6 +69,8 @@ First you will have to create a Yandex account. This is actually fairly easy to 
         7. Сlick the icon again, select 'Show Keyboard Viewer'
         8. Now with your cursor in the captcha input box, type the letters as you see them in the captcha image using
            the simulated Russian keyboard on screen.
+    2. For all platforms:
+        1. Navigate to https://russian.typeit.org/ and type away, then copy/paste.
 
 #### Modifying the review text and photo
 
