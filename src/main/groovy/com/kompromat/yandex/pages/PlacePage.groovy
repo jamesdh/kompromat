@@ -27,6 +27,7 @@ class PlacePage extends Page {
         send(required: false) {$('div.business-review-form__controls > div:nth-child(1)', dynamic: true)}
         cancel(required: false) {$('div.business-review-form__controls > div:nth-child(1)', dynamic: true)}
         placeName {$('h1.orgpage-header-view__header')}
+        gratitude(required: false) {$('div.business-review-dialog-form__gratitude')}
     }
 
     PlacePage doRating(String message, Path photo) {
@@ -43,6 +44,9 @@ class PlacePage extends Page {
                 comment.text = message
                 filesInput.file = photo.toFile()
                 send.click()
+                waitFor(10) {
+                    gratitude
+                }
             } catch(WaitTimeoutException e) {
                 log.warn("yandex.maps.place: Unable to review {}, skipping...", url)
             } catch(Exception e) {
