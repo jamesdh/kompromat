@@ -7,7 +7,7 @@ plugins {
     id "com.github.erdi.extended-idea" version "2.2"
 }
 
-version = "1.1.4"
+version = "1.2.0"
 group = "com.ham.kompromat"
 
 repositories {
