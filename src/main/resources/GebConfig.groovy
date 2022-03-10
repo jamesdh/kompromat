@@ -18,6 +18,6 @@ driver = {
     driver.logLevel = Level.OFF
     driver.executeScript("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
     driver.manage().window().maximize()
-    driver.manage().timeouts().pageLoadTimeout(300, TimeUnit.SECONDS)
+    driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS)
     return driver
 }
