@@ -107,6 +107,9 @@ $ ./kompromat --city=MINSK 'myusername' 'mypassword'
 
 ## Suggestions and Caveats
 
+#### Use a VPN
+This is fairly self-explanatory. It doesn't hurt to even minimally try and cover your tracks and hide your location.   
+
 #### Use a burner email
 
 It would be wise to create a dummy email address rather than using your personal one. Using a service such as
