@@ -19,7 +19,8 @@ class MapsPage extends Page {
         searchReady { $('div.small-search-form-view__icon._type_search')}
         restaurants { $('a.catalog-grid-view__item._id_food', title: 'Где поесть')}
         searchInput { $('input.input__control', placeholder: 'Поиск мест и адресов').module(SearchInput)}
-        searchResults { $('ul.search-list-view__list > li > div > div > a')}
+        suggestionPopup(required: false) {$('div.tooltip-content-view > div.close-button', dynamic: true)}
+        searchResults(to:PlacePage, required: false) { $('ul.search-list-view__list > li > div > div > a', dynamic: true)}
     }
 
     MapsPage doSearch(String search) {
@@ -39,6 +40,9 @@ class MapsPage extends Page {
     Navigator getSearchResult() {
         waitFor(10) {
             searchReady && searchResults
+        }
+        if(suggestionPopup) {
+            suggestionPopup.click()
         }
         searchResults
     }

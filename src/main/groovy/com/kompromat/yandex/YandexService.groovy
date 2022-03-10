@@ -8,6 +8,8 @@ import geb.Browser
 import geb.navigator.Navigator
 import groovy.util.logging.Slf4j
 import jakarta.inject.Singleton
+import org.openqa.selenium.ElementClickInterceptedException
+import org.openqa.selenium.JavascriptExecutor
 
 import java.nio.file.Path
 
@@ -33,15 +35,22 @@ class YandexService {
                 mapsPage.doSearch("Где поесть")
                 sleep(1000)
                 Navigator results = mapsPage.getSearchResult()
-                results.each {
-                    String url = it.attr('href')
-                    log.debug("yandex.maps: opening new tab for {}", url)
-                    withNewWindow({js.exec("window.open('$url', 'place');")}, page: PlacePage, close: false) {
-                        sleep(1500)
+                int initialSize = results.size() - 1
+                log.info("yandex.maps: reviewing {} places for the current map location", initialSize)
+                (0..initialSize).each {
+                    Navigator place = results[it]
+                    String url = place.attr('href')
+                    log.debug("yandex.maps: opening page for {}", url)
+                    ((JavascriptExecutor)browser.driver).executeScript("arguments[0].scrollIntoView(true);", place.firstElement())
+                    sleep(2500)
+                    try {
+                        place.click()
                         PlacePage placePage = at(PlacePage)
-                        log.info("yandex.maps: reviewing place {} @ {}", placePage.name, url)
+                        log.info("yandex.maps: reviewing {} @ {}", placePage.name, url)
                         placePage.doRating(message, photo)
-                        js.exec("window.close();")
+                        placePage.goBackToResults()
+                    } catch(Exception e) {
+                        log.info("yandex.maps: unable to open page {}", url)
                     }
                 }
                 sleep(5000)
