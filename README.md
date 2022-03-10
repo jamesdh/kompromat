@@ -115,10 +115,13 @@ It would be wise to create a dummy email address rather than using your personal
 #### Yandex is asking for a phone number
 
 In the event Yandex thinks you may be a bot (let's be honest, you effectively are one if you are running this) they may
-prompt you for a phone number as a form of a captcha. I would advise against using your own personal phone number.
-Instead, download [Burner](https://www.burnerapp.com/)
-to your phone and register a new phone number for receiving the Yandex verification text. The burner number will not be
-associated with you in any way, and it should not cost anything during the free trial.
+prompt you for a phone number as a form of a captcha. I would strongly advise against using your own personal phone 
+number. Instead, use a "burner" phone number. There are several apps you can use to create a virtual/temporary phone 
+number. Some may or may not work in your country, but you can try the following:
+
+- [Burner](https://www.burnerapp.com/)
+- [Receive-Sms-Free.cc](https://receive-sms-free.cc)
+- [Temp-SMS](https://temp-sms.org)
 
 #### Yandex is asking if I am a robot
 
@@ -134,9 +137,6 @@ The following is a list of things that may help make this tool easier to use by 
 2. Machine learning to automatically decipher the captcha text, thus not requiring users to try and type out cyrillic
    which many people will struggle with
 3. Automate the Yandex account creation process. Dependent on #2 above. 
-4. ~~Selenium/Webdriver tricks to help avoid bot detection (and thus the captcha requests)~~ 
-   1. The switch to Google Chrome and taking advantage of webdriver features that were not possible in Firefox 
-      should have resolved this about as good as can be hoped for. 
 
 ## Built With
 
