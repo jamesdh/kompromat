@@ -29,12 +29,10 @@ class YandexService {
                 Double lng = city.randomLongitude
                 log.info("yandex.maps: panning to random location {}, {} near {}", lat, lng, city.name())
                 mapsPage.panTo(lat, lng)
-                sleep(1500)
                 log.debug("yandex.maps: searching for places...")
                 mapsPage.doSearch("Где поесть")
-                sleep(1500)
+                sleep(1000)
                 Navigator results = mapsPage.getSearchResult()
-                sleep(1500)
                 results.each {
                     String url = it.attr('href')
                     log.debug("yandex.maps: opening new tab for {}", url)
